@@ -6,9 +6,8 @@
 // 4. Creates a test record and returns questions
 
 import { supabaseAdmin } from '../../lib/supabase'
-import { buildBankGenerationPrompt, BANK_BATCH_SIZE, BANK_MIN_THRESHOLD } from '../../lib/constants'
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { buildBankGenerationPrompt, BANK_MIN_THRESHOLD } from '../../lib/constants'
+
 
 async function callClaude(system, user) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
